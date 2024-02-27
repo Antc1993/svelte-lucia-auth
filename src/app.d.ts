@@ -3,10 +3,17 @@
 declare global {
 	namespace App {
         interface Platform {
-            env: Env
+            env: {
+                database: D1Database;
+              };
             cf: CfProperties
             ctx: ExecutionContext
+            context: {
+                    waitUntil(promise: Promise<any>): void;
+            };
+            caches: CacheStorage & { default: Cache }
         }
+       
     }
 }
 

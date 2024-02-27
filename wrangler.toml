@@ -1,6 +1,10 @@
 name = "lucia-auth2"
 compatibility_date = "2024-02-23"
 
+compatibility_flags = [ "nodejs_compat" ]
+workers_dev = true
+
+
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.
 # Docs: https://developers.cloudflare.com/workers/platform/environment-variables
@@ -48,3 +52,10 @@ compatibility_date = "2024-02-23"
 # [[migrations]]
 # tag = "v1"
 # new_classes = ["MyDurableObject"]
+
+
+ [[d1_databases]]
+ binding = "database"
+ database_name = "test-auth"
+ database_id = "c2d2ba33-970b-4bc1-a895-6d1e64b3ab31"
+ preview_database_id = "database"
